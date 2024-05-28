@@ -12,7 +12,7 @@ base_headers = {'Content-Type': 'application/json; charset=utf-8',
 
 
 def generate_XAUTH(serverGUID):
-    url = f"https://5EA1.playfabapi.com/Client/LoginWithCustomID?sdk={base_headers['X-PlayFabSDK']}"
+    url = f"https://playfab.pixelboop.net/Client/LoginWithCustomID?sdk={base_headers['X-PlayFabSDK']}"
     requestObj = {
         "CreateAccount": False,
         "CustomId": serverGUID,
@@ -33,7 +33,7 @@ def generate_XAUTH(serverGUID):
 
 def get_server(ipPortCombo, headers):
     try:
-        url = f"https://5EA1.playfabapi.com/Client/GetCurrentGames?sdk={base_headers['X-PlayFabSDK']}"
+        url = f"https://playfab.pixelboop.net/Client/GetCurrentGames?sdk={base_headers['X-PlayFabSDK']}"
         requestObj = {
             "TagFilter": {
                 "Includes": [
@@ -52,7 +52,7 @@ def get_server(ipPortCombo, headers):
 
 def deregister_server(lobbyID, headers):
     try:
-        url = f"https://5EA1.playfabapi.com/Client/ExecuteCloudScript?sdk={base_headers['X-PlayFabSDK']}"
+        url = f"https://playfab.pixelboop.net/Client/ExecuteCloudScript?sdk={base_headers['X-PlayFabSDK']}"
         requestObj = {
             "FunctionName": "deregisterDedicatedServer",
             "FunctionParameter":
@@ -73,7 +73,7 @@ def deregister_server(lobbyID, headers):
 
 def heartbeat_server(serverData, headers, dataToChange=None):
     try:
-        url = f"https://5EA1.playfabapi.com/Client/ExecuteCloudScript?sdk={base_headers['X-PlayFabSDK']}"
+        url = f"https://playfab.pixelboop.net/Client/ExecuteCloudScript?sdk={base_headers['X-PlayFabSDK']}"
 
         requestObj = {
             "FunctionName": "heartbeatDedicatedServer",

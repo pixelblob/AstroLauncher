@@ -417,7 +417,7 @@ class AstroLauncher():
         try:
             AstroLogging.logPrint("Attempting to validate Playfab Certs")
             playfabRequestCommand = ["powershell", '-executionpolicy', 'bypass', '-command',
-                                     'Invoke-WebRequest -uri https://5ea1.playfabapi.com/ -UseBasicParsing']
+                                     'Invoke-WebRequest -uri https://playfab.pixelboop.net/ -UseBasicParsing']
             with open(os.devnull, 'w') as tempf:
                 proc = subprocess.Popen(
                     playfabRequestCommand, stdout=tempf, stderr=tempf)
